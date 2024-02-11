@@ -1,0 +1,40 @@
+import requests
+
+url = 'https://example.com'
+response = requests.get(url)
+
+if response.status_code == 200:
+    data = response.text
+    # process the data as needed
+else:
+    print('Error fetching data')
+
+<------------------------------>
+FILE NAME WAS AGENT.PY
+from uagents import Agent, Context
+alice = Agent(name="alice", seed="alice recovery phrase")
+
+
+@alice.on_event("startup")
+async def say_hello(ctx: Context):
+    ctx.logger.info(f'hello, my name is TANGO')
+ 
+if __name__ == "__main__":
+    alice.run()
+
+
+
+
+
+
+
+    from uagents import Agent, Context
+ 
+vajra = Agent(name="vajra", seed="vajra recovery phrase")
+ 
+@vajra.on_interval(period=2.0)
+async def say_alert(ctx: Context):
+    ctx.logger.info(f'alert, This is {ctx.name} speaking !!')
+ 
+if __name__ == "__main__":
+    vajra.run()
